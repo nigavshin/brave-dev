@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { initialOperators } from "../data/data";
 import PayForm from "./paymentForm";
+import { styled } from "styled-components";
+
 
 type InitialOperators = typeof initialOperators;
 
@@ -10,13 +12,12 @@ const ListOperators = () => {
     null
   );
   const [showAddForm, setshowAddForm] = useState(false);
-
   const [operators, setOperators] = useState(initialOperators);
 
   function handleClickAddOperator() {
     const nextOperators = [
       ...operators,
-      { id: operators[operators.length - 1].id + 1, name: name },
+      { id: operators[operators.length - 1].id + 1, name: name, img: "s" },
     ];
 
     setOperators(nextOperators);
@@ -24,29 +25,46 @@ const ListOperators = () => {
   }
 
   const handleClickShowForm = (operator: InitialOperators[0]) => {
-    setShowPayForm(operator)
+    setShowPayForm(operator);
   };
 
   function handleClickShowAddForm() {
     setshowAddForm(!showAddForm);
   }
 
+  const List = styled.ul`
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  `;
+
+  const ListItem = styled.li`
+    margin: 15px;
+  `;
+
+  const LightButton = styled.button`
+    padding: 15px;
+    box-shadow: 0 15px 30px 0 rgba(20, 27, 36, 0.1);
+    cursor: pointer;
+  `;
+
   return (
     <>
-      <ul>
+      <List>
         {operators.map((operator) => (
-          <li key={operator.id}>
-            <button type="button" onClick={() => handleClickShowForm(operator)}>
+          <ListItem key={operator.id}>
+            <LightButton onClick={() => handleClickShowForm(operator)}>
+              <img src={operator.img} width={100} height={100} />
               {operator.name}
-            </button>
-          </li>
+            </LightButton>
+          </ListItem>
         ))}
-      </ul>
+      </List>
       {showPayForm && <PayForm showPayForm={showPayForm} />}
 
-      <button type="button" onClick={handleClickShowAddForm}>
+      <LightButton type="button" onClick={handleClickShowAddForm}>
         +
-      </button>
+      </LightButton>
       {showAddForm && (
         <>
           <input value={name} onChange={(e) => setName(e.target.value)} />
