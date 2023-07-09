@@ -14,6 +14,10 @@ const PaymentWrapper = styled.div`
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
   z-index: 200;
+
+  @media (max-width: 414px) {
+    height: 150%;
+  }
 `;
 
 const PaymentContainer = styled.div`
