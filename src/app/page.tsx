@@ -4,10 +4,9 @@ import ListOperators from "./components/listOperators";
 import { styled } from "styled-components";
 
 const Article = styled.article`
-  max-width: 600px;
+  max-width: 1440px;
   margin: auto;
   padding: 50px;
-  box-shadow: 0 15px 30px 0 rgba(20, 27, 36, 0.1);
 `;
 
 const Title = styled.h1`
