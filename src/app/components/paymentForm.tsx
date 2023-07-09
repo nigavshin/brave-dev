@@ -3,7 +3,7 @@ import InputMask from "react-input-mask";
 import * as Yup from "yup";
 import { styled } from "styled-components";
 
-const PaymentWrapper = styled.article`
+const PaymentWrapper = styled.div`
   position: absolute;
   top: 0;
   left: 0;

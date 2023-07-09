@@ -65,7 +65,7 @@ const Subtitle = styled.h2`
   color: #000000;
 `;
 
-const AddOperatorWrapper = styled.article`
+const AddOperatorWrapper = styled.div`
   position: absolute;
   top: 0;
   left: 0;

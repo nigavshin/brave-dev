@@ -52,11 +52,6 @@ i {
   font-style: normal;
 }
 
-a,
-button {
-  transition: all 0.1s ease-in;
-}
-
 a[href^="tel"] {
   color: inherit;
 }

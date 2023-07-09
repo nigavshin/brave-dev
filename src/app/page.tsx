@@ -6,7 +6,10 @@ import { styled } from "styled-components";
 const Article = styled.article`
   max-width: 1440px;
   margin: auto;
-  padding: 50px;
+
+  @media(max-width: 1435px) {
+    width: calc(100% - 40px);
+  }
 `;
 
 const Title = styled.h1`
