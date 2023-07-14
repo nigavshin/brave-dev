@@ -1,9 +1,12 @@
-/* scaffolding */
+import { createGlobalStyle } from 'styled-components';
+
+const GlobalStyle = createGlobalStyle`
 
 html,
 body {
   margin: 0;
   padding: 0;
+  font-family:  Arial, Helvetica, sans-serif;
 }
 
 .visually-hidden {
@@ -54,6 +57,11 @@ i {
 
 a[href^="tel"] {
   color: inherit;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
 }
 
 button {
@@ -90,3 +98,6 @@ input:focus-visible {
   outline: none;
   border-color: #2c6a66;
 }
+`
+
+export default GlobalStyle;

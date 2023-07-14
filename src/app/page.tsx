@@ -1,19 +1,30 @@
 "use client";
 
 import ListOperators from "./components/listOperators";
-import { styled } from "styled-components";
+import { keyframes, styled } from "styled-components";
 
-const Article = styled.article`
+const download = keyframes`
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+`;
+
+const Download = styled.article`
   max-width: 1440px;
   margin: auto;
+  animation: ${download} 0.3s linear;
 
-  @media(max-width: 1435px) {
+  @media (max-width: 1435px) {
     width: calc(100% - 40px);
   }
 `;
 
 const Title = styled.h1`
-  font-family: "Inter", sans-serif;
+  margin: 40px 0 20px;
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
@@ -24,10 +35,10 @@ const Title = styled.h1`
 
 const Home = () => {
   return (
-    <Article>
+    <Download>
       <Title>Выберите оператора</Title>
       <ListOperators />
-    </Article>
+    </Download>
   );
 };
 

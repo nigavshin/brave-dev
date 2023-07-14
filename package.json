@@ -26,6 +26,9 @@
     "yup": "^1.2.0"
   },
   "devDependencies": {
-    "@types/react-input-mask": "^3.0.2"
+    "@types/react-input-mask": "^3.0.2",
+    "postcss-styled-syntax": "^0.4.0",
+    "stylelint": "^15.10.1",
+    "stylelint-config-standard": "^34.0.0"
   }
 }
